@@ -1,7 +1,7 @@
 name: Print Out Exec Context
 on:
   schedule:
-    - cron: '25 * * * *'
+    - cron: '45 * * * *'
   pull_request:
     types:
       - opened
