@@ -1,0 +1,6 @@
+name: Parent Workflow
+on:
+  workflow_dispatch:
+jobs:
+  call-base:
+    uses: ./.github/workflows/print_out_env_info.yaml
