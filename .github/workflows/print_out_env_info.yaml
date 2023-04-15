@@ -1,7 +1,5 @@
 name: Print Out Exec Context
 on:
-  schedule:
-    - cron: '45 * * * *'
   pull_request:
     types:
       - opened
@@ -28,3 +26,13 @@ jobs:
           cat $GITHUB_EVENT_PATH
           echo ""
           echo "#############################################"
+  github_script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print-gh-script-context
+        uses: actions/github-script@v6
+        with:
+          script: |
+            console.log('*********************************************');
+            console.log(context);
+            console.log('*********************************************');
